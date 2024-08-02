@@ -1,5 +1,6 @@
 {
   "name": "example-lambda-js",
+  "description": "KubeLambda JavaScript example lambda",
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
@@ -26,13 +27,18 @@
     "constructs": "^10.0.0",
     "jest": "^29.7.0",
     "jest-junit": "^15",
+    "prettier": "^3.3.3",
     "projen": "^0.84.13",
     "standard-version": "^9"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
+    "coverageProvider": "v8",
     "clearMocks": true,
     "collectCoverage": true,
     "coverageReporters": [
@@ -54,7 +60,7 @@
     ],
     "testMatch": [
       "**/__tests__/**/*.[jt]s?(x)",
-      "**/?(*.)+(spec|test).[tj]s?(x)"
+      "**/*(*.)@(spec|test).[jt]s?(x)"
     ],
     "reporters": [
       "default",
